@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/second_theme"
     android:layout_height="match_parent"
+    android:background="@color/second_theme"
     tools:context=".views.MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -66,46 +66,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cv">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/horizontalRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:scrollbars="horizontal"
-                app:layout_constraintBottom_toTopOf="@id/verticalRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-
-            <TextView
-                android:layout_margin="@dimen/_5sdp"
-                android:gravity="center"
-                android:textSize="@dimen/_12sdp"
-                android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:layout_height="wrap_content"
-                android:text="@string/now_showing"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/verticalRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/horizontalRecycler" />
-        </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@+id/nowShowing" />
+
+            <TextView
+                android:id="@+id/nowShowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/now_showing"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalRecycler" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

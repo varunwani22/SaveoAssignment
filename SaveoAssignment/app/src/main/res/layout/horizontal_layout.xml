@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hzCard"
+    android:layout_width="@dimen/_200sdp"
+    android:layout_height="@dimen/_120sdp"
     android:layout_margin="@dimen/_10sdp"
+    android:elevation="@dimen/_20sdp"
     app:cardCornerRadius="@dimen/_10sdp"
-    android:layout_height="wrap_content">
+    app:cardElevation="@dimen/_2sdp"
+    app:contentPadding="0dp">
 
     <ImageView
         android:id="@+id/ivHzImage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"/>
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
 
 </androidx.cardview.widget.CardView>
