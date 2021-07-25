@@ -1,6 +1,8 @@
 package com.dev.saveoassignment.views
 
+import com.dev.saveoassignment.jsonmodel.MovieModelItem
+
 
 interface ItemClickListener {
-//    fun onItemClick(itemsEntity: ItemsEntity, position: Int)
+    fun onItemClick(movieModel: MovieModelItem, position: Int)
 }

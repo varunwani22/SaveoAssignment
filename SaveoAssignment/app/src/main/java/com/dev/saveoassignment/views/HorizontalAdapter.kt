@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dev.saveoassignment.R
+import com.dev.saveoassignment.jsonmodel.MovieModelItem
 import com.dev.saveoassignment.model.ResponseModelItem
 import com.dev.saveoassignment.model.Show
 
@@ -11,7 +12,7 @@ import com.dev.saveoassignment.model.Show
  * Adapter class for recyclerview
  */
 class HorizontalAdapter(
-    private var showList: List<ResponseModelItem>,
+    private var showList: List<MovieModelItem>,
     var onClickListener: ItemClickListener
 ) :
     RecyclerView.Adapter<HorizontalViewHolder>() {
@@ -29,7 +30,7 @@ class HorizontalAdapter(
         return showList.size
     }
 
-    fun updateData(showList: List<ResponseModelItem>) {
+    fun updateData(showList: List<MovieModelItem>) {
         this.showList = showList
         notifyDataSetChanged()
     }

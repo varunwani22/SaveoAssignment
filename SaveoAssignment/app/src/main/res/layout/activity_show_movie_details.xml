@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/second_theme"
-        android:paddingBottom="@dimen/_22sdp"
+        android:paddingBottom="@dimen/_40sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -71,7 +71,7 @@
             android:layout_below="@id/tvShowTitle"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_toEndOf="@id/ivShowImage"
-            android:text="R"
+            android:text="Runtime-"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
 
@@ -92,13 +92,26 @@
             />
 
         <TextView
+            android:id="@+id/dateOfShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/r"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toEndOf="@id/ivShowImage"
+            android:text="@string/date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+
+            />
+
+        <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvShowTitle"
+            android:layout_below="@id/r"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_toEndOf="@id/duration"
+            android:layout_toEndOf="@id/dateOfShow"
             android:text="asadsd"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
@@ -109,39 +122,42 @@
             android:id="@+id/rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/r"
+            android:layout_below="@id/dateOfShow"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_toEndOf="@id/ivShowImage"
             android:drawableLeft="@drawable/ic_baseline_star_24"
             android:drawablePadding="@dimen/_5sdp"
-            android:text="asadsd"
+            android:text="@string/_8_3"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
 
         <TextView
-            android:id="@+id/review"
+            android:id="@+id/language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rating"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_toEndOf="@id/ivShowImage"
             android:drawablePadding="@dimen/_5sdp"
-            android:text="@string/reviews"
+            android:text="@string/language"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
 
         <TextView
-            android:id="@+id/reviews"
+            android:id="@+id/setLanguage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rating"
+            android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_toEndOf="@id/review"
+            android:layout_toEndOf="@id/language"
             android:drawablePadding="@dimen/_5sdp"
-            android:text="Rating"
+            android:text="English"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
+
     </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -161,30 +177,40 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_20sdp" />
 
-        <TextView
-            android:id="@+id/tvDetails"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/synopsis"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:justificationMode="inter_word"
-            android:text="details" />
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/synopsis"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:justificationMode="inter_word"
+                android:text="details" />
+
+        </ScrollView>
     </RelativeLayout>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/add_fab"
+    <Button
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
         android:background="@drawable/box"
-        android:elevation="@dimen/_10sdp"
+        android:elevation="@dimen/_20sdp"
         android:paddingStart="@dimen/_20sdp"
         android:paddingEnd="@dimen/_20sdp"
         android:text="@string/book_now"
-        android:textColor="@color/second_theme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

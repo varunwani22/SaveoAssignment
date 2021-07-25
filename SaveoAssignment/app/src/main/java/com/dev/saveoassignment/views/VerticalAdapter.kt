@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dev.saveoassignment.R
+import com.dev.saveoassignment.jsonmodel.MovieModelItem
 import com.dev.saveoassignment.model.ResponseModelItem
 
 /**
  * Adapter class for recyclerview
  */
 class VerticalAdapter(
-    private var showLists: List<ResponseModelItem>,
+    private var showLists: List<MovieModelItem>,
     var onClickListener: ItemClickListener
 ) :
     RecyclerView.Adapter<VerticalViewHolder>() {
@@ -29,7 +30,7 @@ class VerticalAdapter(
         return showLists.size
     }
 
-    fun updateVerticalData(showLists: List<ResponseModelItem>) {
+    fun updateVerticalData(showLists: List<MovieModelItem>) {
         this.showLists = showLists
         notifyDataSetChanged()
     }
