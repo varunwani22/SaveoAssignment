@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SaveoAssignment</string>
+    <string name="movies">Movies</string>
+    <string name="now_showing">Now Showing</string>
+    <string name="reviews">Reviews-  </string>
+    <string name="synopsis">Synopsis</string>
+    <string name="book_now">Book Now!</string>
+    <string name="language">Language-</string>
+    <string name="_8_3">8.3</string>
+    <string name="date">Date-</string>
 </resources>
