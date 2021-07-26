@@ -51,7 +51,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         ).get(MovieViewModel::class.java)
 
 
-
+        /**
+         * Checking if internet connection is established or not
+         */
         if (isNetworkConnected()) {
             observableHorizontalData()
             observableVertical()
@@ -69,6 +71,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
     }
 
 
+    /**
+     * Observing data from view model
+     */
     private fun observableVerticalData() {
         movieViewModel.getMovies(num).observe(this, Observer {
             showVerticalList.addAll(it)
@@ -76,6 +81,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         })
     }
 
+    /**
+     * Observing data from view model
+     */
     private fun observableVertical() {
         movieViewModel.getMovies(num).observe(this, Observer {
             progressBar.visibility = View.VISIBLE
@@ -87,6 +95,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         })
     }
 
+    /**
+     * Observing data from view model
+     */
     private fun observableHorizontalData() {
         movieViewModel.getMovies(num).observe(this, Observer {
             showList.clear()
@@ -95,11 +106,10 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         })
     }
 
+
     /**
      * Setting the recycleView component
      */
-
-
     private fun setHorizontalRecyclerData() {
         horizontalAdapter = HorizontalAdapter(showList, this)
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -109,6 +119,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         }
     }
 
+    /**
+     * Setting the vertical recycleView component
+     */
     private fun setVerticalRecyclerData() {
         verticalAdapter = VerticalAdapter(showVerticalList, this)
         gridLayoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false)
@@ -118,6 +131,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         }
     }
 
+    /**
+     * Checking internet connection
+     */
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun isNetworkConnected(): Boolean {
         //1
@@ -136,6 +152,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
                 networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
+    /**
+     * Setting pagination to vertical recyclerview
+     */
     private fun showPageNation() {
         var loading = true
         var pastVisiblesItems: Int
@@ -161,6 +180,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         })
     }
 
+    /**
+     * Sending data to ShowMovieDetails activity using intent
+     */
     override fun onItemClick(movieModel: MovieModelItem, position: Int) {
         var intent = Intent(this, ShowMovieDetails::class.java)
         intent.putExtra("image", movieModel.image.medium)

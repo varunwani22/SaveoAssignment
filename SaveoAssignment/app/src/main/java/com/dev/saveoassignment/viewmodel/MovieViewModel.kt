@@ -10,6 +10,9 @@ import kotlinx.coroutines.Dispatchers
 
 class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
+    /**
+     * emitting data for observer
+     */
 
     fun getMovies(q: Int): LiveData<MovieModel> {
         return liveData(Dispatchers.IO) {

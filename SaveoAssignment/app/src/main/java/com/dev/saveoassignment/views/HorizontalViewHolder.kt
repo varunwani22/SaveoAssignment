@@ -14,9 +14,7 @@ class HorizontalViewHolder(itemView: View, var onClickListener: ItemClickListene
     fun setData(show: MovieModelItem) {
         itemView.apply {
             Glide.with(ivHzImage).load(show.image.medium).into(ivHzImage)
-//            hzCard.setOnClickListener {
-//                onClickListener.onItemClick(responseModelItem, adapterPosition)
-//            }
+
         }
 
     }
